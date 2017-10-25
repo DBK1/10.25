@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="routes/index.js"></script>
+<script src="routes/jquery.min.js"></script>
+</body>
+<script>
+    $(function () {
+        $.ajax({
+            url:"http://localhost:3000/dbk",
+            type:"POST",
+            data:{a:1},
+            success:function (e) {
+                for(var i=0;i<e.name.length;i++){
+                    $("body").append("<p>"+e.name[i]+"</p>")
+                }
+
+            }
+        })
+    })
+
+</script>
+</html>
